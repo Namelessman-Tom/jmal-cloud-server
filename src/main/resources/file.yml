@@ -1,8 +1,8 @@
 file:
   # 测试用例临时目录
-  testTempDir: /Users/jmal/Downloads/jmalcloud-test-temp
+  testTempDir: /Users/namelessman/projects/netdisk/files/jmalcloud-test-temp
   # 文件存储根目录 文件监控目录
-  rootDir: /Users/jmal/temp/filetest/rootpath
+  rootDir: /Users/namelessman/projects/netdisk/files/rootpath
   # 数据库文件和相关文件存储目录 位于 ${rootDir}/${dbDir}
   dbDir: jmalcloud_db
   # markdown默认存储的位置

@@ -42,7 +42,7 @@ spring:
       prod-mysql: prod, mysql
       prod-pgsql: prod, pgsql
       native: native
-    active: native
+    active: default
   servlet:
     multipart:
       max-file-size: 50MB
