@@ -38,3 +38,6 @@ build/
 ### VS Code ###
 .vscode/
 src/main/resources/application-dev.yml
+
+### code2md相关 ###
+project_code.md
