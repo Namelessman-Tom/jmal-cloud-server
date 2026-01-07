@@ -41,3 +41,6 @@ src/main/resources/application-dev.yml
 
 ### code2md相关 ###
 project_code.md
+
+### 敏感配置相关 ###
+src/main/resources/application-dev-security.yml
