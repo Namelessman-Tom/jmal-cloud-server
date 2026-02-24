@@ -1,6 +1,5 @@
 package com.jmal.clouddisk.util;
 
-import cn.hutool.core.img.ImgUtil;
 import cn.hutool.core.util.StrUtil;
 import com.jmal.clouddisk.config.jpa.DataSourceProperties;
 import com.jmal.clouddisk.dao.DataSourceType;
@@ -30,6 +29,7 @@ import org.springframework.stereotype.Service;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
+import java.util.Base64;
 
 /***
  * 读取音频文件信息工具
@@ -58,8 +58,8 @@ public class AudioFileUtils {
                 Artwork artwork = tag.getFirstArtwork();
                 if (artwork != null) {
                     if (dataSourceProperties.getType() == DataSourceType.mongodb) {
-                        String Base64 = ImgUtil.toBase64(ImgUtil.toImage(artwork.getBinaryData()), artwork.getMimeType());
-                        music.setCoverBase64(Base64);
+                        String rawBase64 = Base64.getEncoder().encodeToString(artwork.getBinaryData());
+                        music.setCoverBase64(rawBase64);
                     } else {
                         filePersistenceService.persistContent(fileDocument.getId(), new ByteArrayInputStream(artwork.getBinaryData()));
                         fileDocument.setContent(new byte[0]);
